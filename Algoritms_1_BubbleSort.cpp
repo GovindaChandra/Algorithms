@@ -3,7 +3,8 @@
 
 using namespace std;
 
-template<typename T> void BubbleSort(vector<T> &vec) {	
+template<typename T>
+void BubbleSort(vector<T> &vec) {	
 	for (size_t i = 0; i < vec.size(); ++i) {
 		bool check = false;
 		for (size_t j = 0; j < vec.size() - i - 1; ++j) {
