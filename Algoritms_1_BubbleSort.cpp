@@ -36,5 +36,5 @@ TEST_CASE("Sorting string") {
 	
 	BubbleSort(collection_unsorted);
 	
-    REQUIRE(collection_sorted == collection_unsorted);
+        REQUIRE(collection_sorted == collection_unsorted);
 }
