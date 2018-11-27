@@ -8,13 +8,13 @@ void InsertSort(vector<T> &vec) {
     for (auto i = 1; i < vec.size(); ++i) {
 
         auto index = i;
-		T temp = vec[i];        
+	    T temp = vec[i];        
 
         while (index > 0 && vec[index - 1] > temp) {
-			vec[index] = vec[index - 1];
-			--index;
-		}
-		vec[index] = temp;
+	    vec[index] = vec[index - 1];
+	    --index;
+	}
+	vec[index] = temp;
     }
 }
 
