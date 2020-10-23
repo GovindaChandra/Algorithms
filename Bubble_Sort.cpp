@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <numeric>
 #include <random>
-#include <vector>
 #include <array>
 
 void bubble_sort(std::array<int, 100>& a) {
