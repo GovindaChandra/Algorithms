@@ -2,11 +2,11 @@
 #include <algorithm>
 #include <numeric>
 #include <random>
-#include <array>
+#include <vector>
 
-void bubble_sort(std::array<int, 100>& a) {
-	for (size_t i = 0; i < 100; i++) {
-		for (size_t j = 0; j < 100 - i - 1; j++) {
+void bubble_sort(std::vector<int>& a) {
+	for (size_t i = 0; i < a.size(); i++) {
+		for (size_t j = 0; j < a.size() - i - 1; j++) {
 			if (a[j] > a[j + 1]) {
 				std::swap(a[j], a[j + 1]);
 			}
@@ -16,10 +16,10 @@ void bubble_sort(std::array<int, 100>& a) {
 
 int main() {
 	
-	std::array<int, 100> a_sorted;
+	std::vector<int> a_sorted(100);
 	std::iota(a_sorted.begin(), a_sorted.end(), 0);
 	
-	std::array<int, 100> a_unsorted(a_sorted);
+	std::vector<int> a_unsorted(a_sorted);
 	std::shuffle(a_unsorted.begin(), a_unsorted.end(), std::mt19937{ std::random_device{}() });
 
 	bubble_sort(a_unsorted);

@@ -2,12 +2,12 @@
 #include <algorithm>
 #include <numeric>
 #include <random>
-#include <array>
+#include <vector>
 
-void select_sort(std::array<int, 100>& a) {
-	for (size_t i = 0; i < 99; i++) {
+void select_sort(std::vector<int>& a) {
+	for (size_t i = 0; i < a.size() - 1; i++) {
 		int min = i;
-		for (size_t j = i + 1; j < 100; j++) {
+		for (size_t j = i + 1; j < a.size(); j++) {
 			if (a[j] < a[min]) {
 				min = j;
 			}
@@ -18,10 +18,10 @@ void select_sort(std::array<int, 100>& a) {
 
 int main() {
 
-	std::array<int, 100> a_sorted;
+	std::vector<int> a_sorted(100);
 	std::iota(a_sorted.begin(), a_sorted.end(), 0);
 
-	std::array<int, 100> a_unsorted(a_sorted);
+	std::vector<int> a_unsorted(a_sorted);
 	std::shuffle(a_unsorted.begin(), a_unsorted.end(), std::mt19937{ std::random_device{}() });
 
 	select_sort(a_unsorted);
